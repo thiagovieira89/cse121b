@@ -101,7 +101,15 @@ picture img {
     border: 1px solid #ccc;
     box-shadow: 0 0 30px #777;
 }
-
+#covid {
+    width: 1100px;
+    height: 400px;
+    border-radius: 5%;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 30px #777;  
+    margin-left: 15%;
+    
+}
 section {
     display: flex;
     flex-direction: column;
