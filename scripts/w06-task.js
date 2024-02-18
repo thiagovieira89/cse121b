@@ -10,7 +10,7 @@ const reset = function(){
 //by the user.
 function displayStates() {
     const stateSelected = document.getElementById('state').value;
-    const apiUrl = `https://covid19-brazil-api.vercel.app/api/report/v1/brazil/uf/${stateSelected.toUppercase()}`;
+    const apiUrl = `https://covid19-brazil-api.vercel.app/api/report/v1/brazil/uf/${stateSelected.toUpperCase()}`;
     
     fetch(apiUrl)
         .then(response => {
