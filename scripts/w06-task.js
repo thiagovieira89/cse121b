@@ -1,13 +1,14 @@
+//Here is a list that save the API datas
 let statesList = {};
-const panelStates = document.getElementById('panel');
+
 
 //reset the user choice and showing the another choice.
 const reset = function(){
     
 };
 
-//this functions get the value that the user choose, and call the API with the state selected
-//by the user.
+//these functions get the value the user chooses and call the API with the selected state
+//by the user. Get the API information, create a list, and get the data from states.
 function displayStates() {
     const stateSelected = document.getElementById('state').value;
     const apiUrl = `https://covid19-brazil-api.vercel.app/api/report/v1/brazil/uf/${stateSelected.toUpperCase()}`;
@@ -22,13 +23,13 @@ function displayStates() {
             }
         })
         .then(data => {
-            // use the datas as you need to show on the screem!
+            // the state selected go in the list, get the datas on the position(cases,death,suspects)
             statesList[stateSelected]={
                 cases: data.cases,
                 deaths: data.deaths,
                 suspects: data.suspects
         };
-            
+        //function calling    
         updatePanel(stateSelected);
             console.log('Cases Numbers:', cases);
             console.log('Death Numbers:', deaths);
@@ -39,7 +40,7 @@ function displayStates() {
             console.log('ERROR CALLING', error);
         });
 }
-
+//this function is creating variables that cause the API data to be displayed on the screen.
 function updatePanel(state) {
     let cases = statesList[state].cases;
     let deaths = statesList[state].deaths;
